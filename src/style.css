@@ -1,3 +1,74 @@
+:root {
+  --blue: #00acdc;
+}
+
 body {
   margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 500;
+}
+
+.header {
+  display: flex;
+  align-items: center; /* conteúdo centralizado verticalmente */
+  justify-content: space-between;
+
+  padding: 0 50px; /* ajuste se o Figma pedir outro valor */
+  background: #fff;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  display: block;
+  height: 40px; /* ajuste conforme Figma */
+  width: auto;
+}
+
+.nav__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__item + .nav__item {
+  margin-left: 20px; /* indents sem gap */
+}
+
+.nav__link {
+  position: relative; /* necessário pro ::after */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 60px; /* altura deve ser nos links */
+  padding: 0; /* sem padding */
+  text-decoration: none;
+
+  color: #000;
+  text-transform: uppercase; /* uppercase via CSS */
+}
+
+.nav__link:hover {
+  color: var(--blue);
+}
+
+.nav__link.is-active {
+  color: var(--blue);
+}
+
+.nav__link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 4px; /* ajuste conforme Figma */
+  background: var(--blue);
 }
