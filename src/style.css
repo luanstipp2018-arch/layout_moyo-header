@@ -2,6 +2,10 @@
   --blue: #00acdc;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Roboto, Arial, sans-serif;
@@ -10,23 +14,24 @@ body {
 
 .header {
   display: flex;
-  align-items: center; /* conteúdo centralizado verticalmente */
-  justify-content: space-between;
-
-  padding: 0 50px; /* ajuste se o Figma pedir outro valor */
+  align-items: center;
+  padding: 0 50px;
   background: #fff;
 }
 
 .logo-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   text-decoration: none;
 }
 
 .logo {
   display: block;
-  height: 40px; /* ajuste conforme Figma */
-  width: auto;
+  height: 40px;
+}
+
+.nav {
+  margin-left: auto;
 }
 
 .nav__list {
@@ -37,21 +42,23 @@ body {
 }
 
 .nav__item + .nav__item {
-  margin-left: 20px; /* indents sem gap */
+  margin-left: 20px;
 }
 
 .nav__link {
-  position: relative; /* necessário pro ::after */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  height: 60px; /* altura deve ser nos links */
-  padding: 0; /* sem padding */
-  text-decoration: none;
+  height: 60px;      /* altura deve estar no link */
+  padding: 0;        /* sem padding */
 
+  text-decoration: none;
   color: #000;
-  text-transform: uppercase; /* uppercase via CSS */
+
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .nav__link:hover {
@@ -69,6 +76,6 @@ body {
   right: 0;
   bottom: 0;
 
-  height: 4px; /* ajuste conforme Figma */
+  height: 4px;
   background: var(--blue);
 }
